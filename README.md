@@ -1,8 +1,9 @@
-# Diet Meal Planner 
+# Farmers Bazaar  
 For people who are following diets restrictions and need new ideas on recipes.
+Farmer's bazaar is created for farmers who want to sell fresh products to local shoppers. 
 
 ## Working Prototype 
-(Example) You can access a working prototype of the React app here: https://diet-meal-planner.vercel.app/ and Node app here: https://diet-meal-planner.herokuapp.com/
+(Example) You can access a working prototype of the React app here: https://diet-meal-planner.vercel.app/ and Node app here: https://farmers-bazaar-api.herokuapp.com/api
 
 
 ## User Stories 
@@ -24,27 +25,23 @@ This app is for two types of users: a visitor and a logged-in user
 * I want to login to the web site 
 * So that I can use it.
 
-### Search diet page 
+### Add items page
 * As a registered user 
-* I want to find the diet I am following and see what recipes are available and their details (not the whole list which is available for registered users).
+* I want to add new items(products) into my inventory list, delete items from the list and update the items in the list.
 * So I can decide if I want to register.
 
-### Add recipe page
-* As a registered user
-* I want to find the recipes available in accordance with my diet plan  and their details.
-* So I can save them in my account.
 
-### Recipe details page
+### Item details page
 * As a registered user
-* I want to see details of the recipe including cooking process, necessary ingredients and equipment.
-* So I can save them in my account.
+* I want to see details of the items including name, quantity, price.
+* So I can manage them in my account.
+
+### Item inventory page
+* As a registered user
+* I want to see all items I have added into the inventrory of the items.
+* So I can manage them in my account.
 
 
-<!-- ### User calendar page
-* As a registered user
-* I want to add chosen recipes into the '7-day calendar' inside the app.
-* So that I can plan my weekly meal.
- -->
 
 
 ### Wireframes 
@@ -56,19 +53,13 @@ Sign up Page
 Login Page
 ![Login Page](/github-images/wireframes/sign_up_page.jpg)
 How it works 1 Page
-![How it works 1 Page](/github-images/wireframes/how_it_works_1.jpg)
-How it works 2 Page
-![How it works 2 Page](/github-images/wireframes/how_it_works_2.jpg)
-How it works  3 Page
-![How it works page 3 Page](/github-images/wireframes/how_it_works_3.jpg)
-How it works  4 Page
-![How it works  4 Page](/github-images/wireframes/how_it_works_4.jpg)
-Add recipes Page 
-![Add recipes Page](/github-images/wireframes/add_recipes_page.jpg)
-Recipe_details Page
-![Recipe_details Page](/github-images/wireframes/recipe_detail_page.jpg)
-Weekly calendar Page
-![Weekly calendar Page](/github-images/wireframes/weekly_calendar_page.jpg)
+![Add Items Page](/github-images/wireframes/how_it_works_1.jpg)
+Add Items Page
+![Item Details Page](/github-images/wireframes/how_it_works_2.jpg)
+Item Details Page
+![Items Inventory Page](/github-images/wireframes/how_it_works_3.jpg)
+Items Inventory Page
+
 
 
 ## Screenshots 
@@ -80,11 +71,11 @@ Register Page
 Login Page
 ![Login Page](/github-images/screenshots/Login.png)
 Recipes list Page
-![Recipes list Page](/github-images/screenshots/Recipes.png)
+![Add Items Page](/github-images/screenshots/Recipes.png)
 Recipe details Page
-![Recipe details Page](/github-images/screenshots/Recipe_details.png)
+![Item Details Page](/github-images/screenshots/Recipe_details.png)
 Added recipes Page
-![Added recipes Page](/github-images/screenshots/Added_recipes.png)
+![Items Inventory Page](/github-images/screenshots/Added_recipes.png)
 
 
 
@@ -92,9 +83,9 @@ Added recipes Page
 The app's functionality includes:
 * Every User has the ability to create an account
 * Every User has the ability to login into the account
-* Every User has the ability to search for diet recipes
-* Every User has the ability to save recipes in the account
-* Every User has the ability to layout recipes on weekly calendar 
+* Every User has the ability to add items
+* Every User has the ability to save items in the inventory list
+* Every User has the ability to see all added items
 
 
 ## Technology 
@@ -109,11 +100,11 @@ The app's functionality includes:
         * __LandingPage.js__ 
             * __Login.js__ 
             * __Register.js__ 
+            * __NavBar.js__ 
             * __Footer.js__ 
-        * __ListOfDiets.js__
-        * __AddRecipesPage.js__
-        * __RecipesForsDiets.js__
-
+        * __AddItems.js__
+        * __ItemDetails.js__
+        * __Inventory.js__
 
 
 ## Back-end Structure - Business Objects 
@@ -121,21 +112,21 @@ The app's functionality includes:
     * id (auto-generated)
     * username (email validation)
     * password (at least 8 chars, at least one alpha and a special character validation)
+    * farm_name,
+    * street_address,
+    * city,
+    * state,
+    * zip
 
-* Recipes (database table)
+* Items (database table)
     * id (auto-generated)
-    * recipe_name (varchar 255)
-    * recipe_img 
-
-* Recipe_Detail (database table)  
-    * id (auto-generated)
-    * diet_name (varchar 255)
-    * recipe_name (varchar 255)
-    * recipe_img 
-    * recipe_ingredients (varchar 255)
-    * nutrition_info (varchar 255)
-    * recipe_equipment (varchar 255) 
-    * recipe_instruction (varchar 255)
+    * users_id, 
+    * name,
+    * description,
+    * itemCount,
+    * itemPrice,
+    * img,
+    * date_created
 
 
 ## API Documentation 
@@ -151,16 +142,7 @@ API Documentation details:
 ├── /users
 │   └── POST
 │       └── /
-├── /recipes
-│   └── GET
-│       ├── /
-│       ├── /diets-by-user-id/:id
-│       ├── /recipes-by-user-id/:id
-│   └── POST
-│       └── /
-│   └── DELETE
-│       └── /:id
-├── /recipe-details
+├── /items
 │   └── GET
 │       ├── /
 │   └── POST
@@ -191,8 +173,14 @@ API Documentation details:
 ```js
 // req.body
 {
-    "user_name": "demo@gmail.com",
-    "password": "123456"
+    "id": 1,
+    "user_name": "user10@gmail.com",
+    "password": "Password10",
+    "farm_name": "vendor10",
+    "street_address": "street 10",
+    "city": "CA",
+    "state": "LA",
+    "zip": "56789"
 }
 
 
@@ -200,12 +188,12 @@ API Documentation details:
 {
     {
     "id": 1,
-    "user_name": "demo@gmail.com"
+    "user_name": "user10@gmail.com"
 }
 }
 ```
 
-### GET `api/recipes`
+### GET `api/items`
 
 ```js
 // req.query
@@ -217,80 +205,48 @@ API Documentation details:
 [
   {
   "id": 1,
-  "user_id": 1,
-  "spoonacular_id": 617586,
-  "recipe_name": "GlutenFree Stir Fried Beef and Broccoli with #McCormickFlavor #AD",
-  "recipe_img": "GlutenFree-Stir-Fried-Beef-and-Broccoli-with--McCormickFlavor--AD-617586.jpg"
+  "users_id": 1,
+  "name": "Celery",
+  "description": "Vegetable",
+  "itemcount": "70",
+  "itemprice": "90",
+  "img": "img3.jpg",
+  "date_created": "2020-03-01T00:00:00.000Z"
   }
 ]
 ```
 
-### GET `/api/recipes/diets-by-user-id/:id`
-
-```js
-// req.params
-{
-  id: ID
-}
-
-// res.body
-[
-    {
-        "diet_name": "glutenfree"
-    }
-]
-```
-
-
-### GET `/api/recipes/recipes-by-user-id/:id`
-
-```js
-// req.params
-{
-  id: ID
-}
-
-// res.body
-[
-    {
-        "id": 76,
-        "recipe_name": "Cashew-Crusted Salmon with Bok Choy",
-        "recipe_img": "cashew-crusted-salmon-with-bok-choy-736719.jpeg",
-        "spoonacular_id": 736719,
-        "diet_name": "primal",
-        "recipe_ingredients": "Freshly ground black pepper",
-        "nutrition_info": "{\"percentProtein\":37.18,\"percentFat\":46.28,\"percentCarbs\":16.54}",
-        "recipe_equipment": "{\"frying pan\"}",
-        "recipe_instruction": "Heat 1 tablespoon of the oil in a large skillet over medium-high heat. Brush honey mustard all over salmon. Season both sides of salmon with onion flakes and black pepper. Place cashews in a shallow dish, add four of the salmon fillets and turn to coat. Place all salmon fillets in hot skillet and cook 3 minutes per side, until fork-tender.Heat remaining olive oil in separate large skillet over medium heat. Add garlic and cook 1 minute. Add bok choy and cook 2 minutes, until greens wilt but stalks are still crisp-tender. Season, to taste, with salt and pepper. Serve the cashew-crusted salmon with this meal and reserve 2 uncrusted fillets for another meal."
-    }
-]
-```
-
-### POST `/api/recipes`
+### POST `/api/items`
 
 ```js
 // req.body
 {
-    "user_id": 1,
-    "spoonacular_id": 87,
-    "recipe_name": "soup",
-    "recipe_img": "img.jpeg"
+    "users_id":"1",
+    "name": "salmon",
+    "description":"fish",
+    "itemcount":"6",
+    "itemprice":"6",
+    "img":"img6.jpg",
+    "date_created":"03/01/2020"
 
 }
 
 // res.body
 [
     {
-    "id": 81,
-    "user_id": 1,
-    "spoonacular_id": 87,
-    "recipe_name": "soup",
-    "recipe_img": "img.jpeg"
+    "id": 16,
+    "users_id": 1,
+    "name": "salmon",
+    "description": "fish",
+    "itemcount": "6",
+    "itemprice": "6",
+    "img": "img6.jpg",
+    "date_created": "2020-03-01T00:00:00.000Z"
 }
 ]
 ```
 
-### DELETE `/api/recipes/:id`
+### DELETE `/api/items/:id`
 
 ```js
 // req.query
@@ -305,79 +261,6 @@ API Documentation details:
   }
 
 ```
-### GET `api/recipe-details`
-
-```js
-// req.query
-{
-  
-}
-
-// res.body
-[
-  {
-   "id": 71,
-        "recipe_id": 71,
-        "spoonacular_id": 492882,
-        "diet_name": "glutenfree",
-        "recipe_name": "Banana Nut Bread Granola Bars – January #ImprovChallenge (#glutenfree)",
-        "recipe_img": "https://spoonacular.com/recipeImages/492882-556x370.jpg",
-        "recipe_ingredients": "¼ -½ c honey or agave nectar (***See Note)",
-        "nutrition_info": "{\"percentProtein\":10.91,\"percentFat\":42.67,\"percentCarbs\":46.42}",
-        "recipe_equipment": "{\"baking pan\",\"bowl\",\"oven\"}",
-        "recipe_instruction": "Preheat oven to 350°F.Coat an 8×8 in. baking pan with cooking spray.In a large bowl, toss together the oats and flax seed.In a medium bowl, stir together banana, honey, vanilla, cinnamon, nutmeg, and salt until well combined.Pour the liquid mixture over the oats mixture, and stir until evenly coated and the oats are moistened.Stir in the cranberries and walnuts.Press the mixture firmly into the prepared pan.Bake for 30-35 minutes, or until golden brown, and firm.Cool in pan for about 5-10 minutes, cut into bars, and remove from pan to finish cooling completely."
-  }
-]
-```
-### POST `api/recipe-details`
-
-```js
-// req.body
-{
-  "recipe_id": "70",
-  "spoonacular_id": 15955,
-  "diet_name": "dairy free",
-  "recipe_name": "Crown Lamb Rack with Green Herb Couscous",
-  "recipe_img": "https://spoonacular.com/recipeImages/15955-556x370.jpg",
-  "recipe_ingredients": "hey",
-  "nutrition_info": "{ percentProtein: 16.04, percentFat: 70.51, percentCarbs: 13.45 }",
-  "recipe_equipment": "world",
-  "recipe_instruction": "Rinse lamb roast, pat dry, and set on a metal rack in a shallow pan (at least 10 in. square). Mix ground cumin and 1/2 teaspoon each salt and pepper; rub onto roast, inside and out.                                                                                                 Bake lamb in a 450 regular or convection oven until a thermometer inserted horizontally through roast into center of thickest part reads 145 to 150 for rare, 35 to 40 minutes, or 155 for medium-rare, 40 to 45 minutes. If bone tips start to scorch, drape them with foil.                                                                                                 Meanwhile, in a 10- to 12-inch frying pan over medium-high heat, shake pine nuts frequently until lightly browned, about 3 minutes; pour into a small bowl.                                                                                                 To pan, add onion and sausages; stir frequently over high heat, breaking meat into small pieces, until lightly browned, about 10 minutes. Add broth and cover; when boiling, stir in peas and cover. When boiling again, stir in couscous, cover, and remove from heat. Let stand in a warm place 10 to 20 minutes.                                                                                                 As lamb roasts, in a food processor or with a knife, finely chop parsley, mint, and dill (or crumble dried herbs) and mix.                                                                                                 Transfer roast to a platter; keeping it warm, let rest 5 to 10 minutes. Stir herb mixture into hot couscous; fill center of roast with some of the couscous and spoon remainder around the meat. Sprinkle couscous with pine nuts. Cut lamb between ribs and serve chops with couscous. Add more salt and pepper to taste."
-}
-
-// res.body
-[
-   {
-    "id": 81,
-    "recipe_id": 70,
-    "spoonacular_id": 15955,
-    "diet_name": "dairy free",
-    "recipe_name": "Crown Lamb Rack with Green Herb Couscous",
-    "recipe_img": "https://spoonacular.com/recipeImages/15955-556x370.jpg",
-    "recipe_ingredients": "hey",
-    "nutrition_info": "{ percentProtein: 16.04, percentFat: 70.51, percentCarbs: 13.45 }",
-    "recipe_equipment": "world",
-    "recipe_instruction": "Rinse lamb roast, pat dry, and set on a metal rack in a shallow pan (at least 10 in. square). Mix ground cumin and 1/2 teaspoon each salt and pepper; rub onto roast, inside and out.                                                                                                 Bake lamb in a 450 regular or convection oven until a thermometer inserted horizontally through roast into center of thickest part reads 145 to 150 for rare, 35 to 40 minutes, or 155 for medium-rare, 40 to 45 minutes. If bone tips start to scorch, drape them with foil.                                                                                                 Meanwhile, in a 10- to 12-inch frying pan over medium-high heat, shake pine nuts frequently until lightly browned, about 3 minutes; pour into a small bowl.                                                                                                 To pan, add onion and sausages; stir frequently over high heat, breaking meat into small pieces, until lightly browned, about 10 minutes. Add broth and cover; when boiling, stir in peas and cover. When boiling again, stir in couscous, cover, and remove from heat. Let stand in a warm place 10 to 20 minutes.                                                                                                 As lamb roasts, in a food processor or with a knife, finely chop parsley, mint, and dill (or crumble dried herbs) and mix.                                                                                                 Transfer roast to a platter; keeping it warm, let rest 5 to 10 minutes. Stir herb mixture into hot couscous; fill center of roast with some of the couscous and spoon remainder around the meat. Sprinkle couscous with pine nuts. Cut lamb between ribs and serve chops with couscous. Add more salt and pepper to taste."
-}
-]
-```
-
-### DELETE `/api/recipes-details/:id`
-
-```js
-// req.query
-{
-  id: ID
-}
-
-// res.body
-
-  {
-
-  }
-
-```
-
 
 ## Responsive 
 App is built to be usable on mobile devices, as well as responsive across mobile, tablet, laptop, and desktop screen resolutions.

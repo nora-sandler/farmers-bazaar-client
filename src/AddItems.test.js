@@ -1,14 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import AddRecipes from "./AddRecipes";
+import AddItems from "./AddItems";
 import { BrowserRouter } from "react-router-dom";
 
-describe("AddRecipes component", () => {
-  it("AddRecipes renders without crashing", () => {
+describe("AddItems component", () => {
+  it("AddItems renders without crashing", () => {
     const div = document.createElement("div");
     ReactDOM.render(
       <BrowserRouter>
-        <AddRecipes />
+        <AddItems/>
       </BrowserRouter>,
       div
     );

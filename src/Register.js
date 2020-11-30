@@ -207,22 +207,6 @@ validateZIP() {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     registerUser = (event) => {
       event.preventDefault();
         //get the input from the form submission
@@ -262,7 +246,7 @@ validateZIP() {
           // repeatPassword.value = ''
           TokenService.saveAuthToken(response.authToken)
           TokenService.saveUserId(response.id)
-          window.location = "/diet/show/"
+          window.location = "/add-item"
       }) 
   
       .catch(res => {

@@ -19,7 +19,7 @@ class NavBar extends Component {
 
         return (
             <header className='clearfix'>
-                <h2>Diet meal planner</h2>
+                <h2>Farmers-bazaar</h2>
                 {TokenService.hasAuthToken() ?
                     <nav className="nav">
                         <ul className='link'>
@@ -30,9 +30,15 @@ class NavBar extends Component {
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/diet/show/">
+                                <Link to="/add-item">
                                     <i className="fa fa-list"></i>
-                                    <span className='navlink-text'>List of diets</span>
+                                    <span className='navlink-text'>Add item</span>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/inventory">
+                                    <i className="fa fa-list"></i>
+                                    <span className='navlink-text'>Inventory</span>
                                 </Link>
                             </li>
                             <li>

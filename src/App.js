@@ -2,13 +2,13 @@ import React from 'react'
 import { BrowserRouter , Switch, Route} from 'react-router-dom'
 import './App.css'
 import Landing from './Landing'
-import AddRecipes from './AddRecipes'
-import ListOfDiets from './ListOfDiets'
+import AddItems from './AddItems'
+import Inventory from './Inventory'
 import Login from './Login'
 import Register from './Register'
 import NavBar from './NavBar'
-
-// import WeeklyCalendar from './WeeklyCalendar'
+import Error from './Error'
+import ItemDetails from './ItemDetails'
 
 class App extends React.Component {
   render() {
@@ -19,15 +19,18 @@ class App extends React.Component {
           <Switch>
             <Route exact path='/' component={Landing} />
 
-      {/* <Route path='/how-it-works' component={HowItWorks} /> */}
-
             <Route path='/user/login' component={Login} />
 
             <Route path='/signup' component={Register} />
 
-            <Route path='/diet/show/' component={ListOfDiets} />
+            <Route path='/add-item' component={AddItems} />
 
-            <Route path='/recipe/add/:dietName' component={AddRecipes} />
+            <Route path='/inventory' component={Inventory} />
+
+            <Route path='/item-details/:itemId' component={ItemDetails} />
+
+            <Route component={Error}/>
+
 
           </Switch>
         </BrowserRouter>
