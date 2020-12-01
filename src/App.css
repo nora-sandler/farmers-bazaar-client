@@ -352,6 +352,14 @@ Content styles (Main Module)
 .inventoryTable{
   table-layout: auto;
   width:90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.inventoryTable tbody tr td{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
 }
 
 /* inventoryTable component */

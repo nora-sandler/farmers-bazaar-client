@@ -54,9 +54,12 @@ class Inventory extends React.Component {
         //by default show there are no items
         if (this.state.itemsByUserId.length === 0) {
             showItemsPage =
-                <div className="itemsByUser">
-                    No items here
-             </div>
+            <tbody>
+                <tr className="itemsByUser">
+                    <td>No items here</td>
+             </tr>
+            </tbody>
+                
         }
         // if there are items 
         else {
@@ -66,8 +69,8 @@ class Inventory extends React.Component {
                 let itemDetailsUrl = `/item-details/${item.id}`
                 if (item) {
                     return (
-                        <tbody>
-                        <tr key = {key}>  
+                        <tbody key = {key}>
+                        <tr>  
                             <td><Link to={itemDetailsUrl}>{item.name} </Link></td>
                             <td>{item.description} </td>
                             <td>{item.itemprice} </td>
