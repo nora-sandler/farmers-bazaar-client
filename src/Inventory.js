@@ -1,7 +1,6 @@
 import React from "react"
 import config from "./config"
 import TokenService from "./services/token-service"
-import ValidationError from "./validationError"
 import { Link } from 'react-router-dom'
 
 class Inventory extends React.Component {
@@ -18,7 +17,7 @@ class Inventory extends React.Component {
     componentDidMount() {
 
         let currentUser = TokenService.getUserId();
-        console.log(currentUser)
+        // console.log(currentUser)
 
         //if the user is not logged in, send him to landing page
         if (!TokenService.hasAuthToken()) {
@@ -34,11 +33,11 @@ class Inventory extends React.Component {
         fetch(getItemsByUserIdUrl)
             .then((itemsInList) => itemsInList.json())
             .then((itemsInList) => {
-                console.log(itemsInList)
+                // console.log(itemsInList)
                 this.setState({
                     itemsByUserId: itemsInList,
                 });
-                console.log(this.state);
+                // console.log(this.state);
             })
 
             .catch((error) => this.setState({ error }));
@@ -67,12 +66,14 @@ class Inventory extends React.Component {
                 let itemDetailsUrl = `/item-details/${item.id}`
                 if (item) {
                     return (
+                        <tbody>
                         <tr key = {key}>  
                             <td><Link to={itemDetailsUrl}>{item.name} </Link></td>
                             <td>{item.description} </td>
                             <td>{item.itemprice} </td>
                             <td>{item.itemcount} </td>
                         </tr>
+                        </tbody>
                     )
                 }
             })
@@ -89,6 +90,8 @@ class Inventory extends React.Component {
                     <col span = "4"/>
                     <col span = "4"/>
                 </colgroup>
+                
+                <tbody>
                 <tr>
                     <th>
                         Name
@@ -104,6 +107,7 @@ class Inventory extends React.Component {
                         Count
                     </th>
                 </tr>
+                </tbody>
                     {showItemsPage}
                     </table>
 
