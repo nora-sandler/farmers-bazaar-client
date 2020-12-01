@@ -60,7 +60,7 @@ Add Items Page
 Items Inventory Page
 ![Item Details Page](/github-images/screenshots/Inventory_page.png)
 Item Details Page
-![Item Details Page](/github-images/screenshots/Item_details.png)
+![Item Details Page](/github-images/screenshots/ItemDetails.png)
 
 
 
