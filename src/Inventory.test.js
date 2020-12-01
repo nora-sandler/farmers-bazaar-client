@@ -8,7 +8,7 @@ describe("Inventory component", () => {
     const div = document.createElement("div");
     ReactDOM.render(
       <BrowserRouter>
-        <Inventory />
+        <Inventory/>
       </BrowserRouter>,
       div
     );

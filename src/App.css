@@ -53,14 +53,7 @@ input[type="text"]:focus, input[type="password"]:focus {
 /* Set a style for the submit button */
 
 button {
-  /* background-color: #4caf50;
-  color: white;
-  padding: 16px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9; */
+ 
   margin: 15px 0px;
   background-color: pink;
   color: black;
@@ -210,9 +203,7 @@ Content styles (Main Module)
   text-align: left;
 }
 
-.RecipesForDiets {
-  font-size: 20px;
-}
+
 
 .go-button {
   margin: 15px 0px;
@@ -310,6 +301,8 @@ Content styles (Main Module)
   padding-bottom: 1em;
 }
 
+
+/* AddItems component */
 .AddItems {
   font-size: 20px;
   text-decoration: none;
@@ -327,6 +320,10 @@ Content styles (Main Module)
   border: solid 1px;
 }
 
+/* AddItems component */
+
+
+/* itemDetails component */
 .itemDetails {
   font-size: 20px;
   text-decoration: none;
@@ -348,63 +345,16 @@ Content styles (Main Module)
   list-style-type: none;
 }
 
+/* itemDetails component */
+
+
+/* inventoryTable component */
 .inventoryTable{
   table-layout: auto;
   width:90%;
 }
 
-
-
-
-
-
-
-
-
-
-.RecipesForDiets {
-  font-size: 20px;
-  padding-top: 20px;
-  font-weight: normal;
-}
-
-#listOfDiets {
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: left;
-}
-
-#listOfDiets div {
-  margin-bottom: 30px;
-}
-
-#listOfDiets div ul {
-  list-style-type: none;
-}
-
-#listOfDiets div ul li {
-  border-bottom: 1px solid grey;
-  padding-bottom: 20px;
-  margin-top: 20px;
-}
-
-#listOfDiets div ul li .RecipesForDiets li {
-  border-bottom: 0;
-  background-color: #eee;
-  padding: 15px;
-}
-
-#listOfDiets div ul li .RecipesForDiets li p {
-  font-size: 70%;
-}
-
-.recipeImage {
-  width: 50%;
-  /* border-bottom: 5px solid grey;
-  padding-bottom: 20px;
-  margin-top: 20px; */
-}
+/* inventoryTable component */
 
 /* NavBar component */
 
@@ -426,62 +376,6 @@ Content styles (Main Module)
 
 /* NavBar component */
 
-/* listOfDiets component */
-
-.show-button:hover {
-  background-color: lightskyblue;
-  cursor: pointer;
-  color: black;
-}
-
-.show-button {
-  background-color: pink;
-  color: black;
-  padding: 10px 12px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 15px;
-  border: 1px solid #747070;
-  border-radius: 190px;
-}
-
-/* listOfDiets component */
-
-/* AddRecipes component */
-
-#AddRecipesPage {
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: left;
-}
-
-.listOfMeals h2 {
-  margin-bottom: 20px;
-}
-
-#AddRecipesPage div p {
-  color: rgb(15, 12, 13);
-  font-size: 20px;
-}
-
-.listOfMeals ul {
-  list-style-type: none;
-}
-
-.listOfMeals div ul li {
-  border-bottom: 1px solid grey;
-  padding-bottom: 20px;
-  margin-top: 20px;
-}
-
-.AddRecipes form {
-  border-bottom: 1px solid grey;
-  padding-bottom: 20px;
-  margin-top: 20px;
-}
-
-/* AddRecipes component */
 
 /* -------------------------------------
 Footer styles (Main Module)
