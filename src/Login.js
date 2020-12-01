@@ -95,7 +95,10 @@ class Login extends React.Component {
                 window.location = "/add-item/";
             })
             .catch((err) => {
-                // console.log(err);
+                // this.setState({
+            // error:err.message
+            //     })
+                console.log(err);
             });
     };
 
@@ -109,6 +112,9 @@ class Login extends React.Component {
                     <p className = "demo">password: 123456</p>
 
                     <form className="loginForm" onSubmit={this.loginUser}>
+                    <div className = "errorMessage">
+                    ""
+                    </div>
                         <label htmlFor="userName">Username</label>
                         <input
                             type="text"
