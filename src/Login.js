@@ -43,22 +43,22 @@ class Login extends React.Component {
         }
     }
 
-    displayError(message){
-        if(message) {
-            return (
-              <div className="error">
-              <p className="input-error">{props.message}</p>
-              </div>
-            );
-          }
-          return 
-          <div>
+    // displayError(message){
+    //     if(message) {
+    //         return (
+    //           <div className="error">
+    //           <p className="input-error">{props.message}</p>
+    //           </div>
+    //         );
+    //       }
+    //       return 
+    //       <div>
         
-          </div>
+    //       </div>
           
           
-        }
-    }
+    //     }
+    // }
 
     validatePassword() {
         const password = this.state.password.value.trim();
@@ -148,7 +148,7 @@ class Login extends React.Component {
                                 message={this.validatePassword()}
                             />
 
-                            
+
                         <button
                             className="go-button"
                             type="submit"
