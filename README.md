@@ -44,21 +44,6 @@ This app is for two types of users: a visitor and a logged-in user
 
 
 
-### Wireframes 
-(Example) Landing Page
-:-------------------------:
-![Landing Page](/github-images/wireframes/landing_page.jpg)
-Sign up Page 
-![Register Page](/github-images/wireframes/sign_up_page.jpg)
-Login Page
-![Login Page](/github-images/wireframes/sign_up_page.jpg)
-How it works 1 Page
-![Add Items Page](/github-images/wireframes/how_it_works_1.jpg)
-Add Items Page
-![Item Details Page](/github-images/wireframes/how_it_works_2.jpg)
-Item Details Page
-![Items Inventory Page](/github-images/wireframes/how_it_works_3.jpg)
-Items Inventory Page
 
 
 
@@ -67,14 +52,14 @@ Landing Page
 :-------------------------:
 ![Landing Page](/github-images/screenshots/Landing_page.png)
 Register Page
-![Register Page](/github-images/screenshots/Signup.png)
+![Register Page](/github-images/screenshots/registration_page.png)
 Login Page
-![Login Page](/github-images/screenshots/Login.png)
-Recipes list Page
-![Add Items Page](/github-images/screenshots/Recipes.png)
-Recipe details Page
-![Item Details Page](/github-images/screenshots/Recipe_details.png)
-Added recipes Page
+![Login Page](/github-images/screenshots/Login_page.png)
+RAdd Items Page
+![Add Items Page](/github-images/screenshots/AddItem_page.png)
+Item Details Page
+![Item Details Page](/github-images/screenshots/Inventory_page.png)
+Items Inventory Page
 ![Items Inventory Page](/github-images/screenshots/Added_recipes.png)
 
 
