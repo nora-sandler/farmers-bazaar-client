@@ -303,9 +303,6 @@ validateZIP() {
                             />
                         )}
 
-                        <ValidationError
-                                message={this.validatePassword()}
-                            />
 
                         <label>Repeat Password</label>
                         <input
@@ -323,9 +320,7 @@ validateZIP() {
                                 message={this.validateRepeatPassword()}
                             />
                         )}
-                        <ValidationError
-                                message={this.validateRepeatPassword()}
-                            />
+
                         <label htmlFor="farm_name">Farm name</label>
                         <input
                             type="text"
@@ -342,9 +337,6 @@ validateZIP() {
                             />
                         )}
 
-                        <ValidationError
-                                message={this.validateFarmName()}
-                            />
 
                         <label htmlFor="street_address">Street address</label>
                         <input
@@ -361,11 +353,6 @@ validateZIP() {
                                 message={this.validateStreetAddress()}
                             />
                         )}
-                        <ValidationError
-                                message={this.validateStreetAddress()}
-                            />
-
-
 
                         <label htmlFor="city">City</label>
                         <input
@@ -382,13 +369,6 @@ validateZIP() {
                                 message={this.validateCity()}
                             />
                         )}
-                        <ValidationError
-                                message={this.validateCity()}
-                            />
-
-
-
-
 
                         <label htmlFor="state">State</label>
                         <input
@@ -406,11 +386,6 @@ validateZIP() {
                             />
                         )}
 
-                        <ValidationError
-                                message={this.validateState()}
-                            />
-
-
                         <label htmlFor="zip">ZIP</label>
                         <input
                             type="text"
@@ -426,9 +401,6 @@ validateZIP() {
                                 message={this.validateZIP()}
                             />
                         )}
-                        <ValidationError
-                                message={this.validateZIP()}
-                            /> 
 
 
                         <button
