@@ -467,6 +467,7 @@ place all the mobile tables styles below this line
 @media only screen and (max-width: 480px) {
   body {
     border: 3px solid green;
+    height: 100vh;
   }
   a {
     padding: 5px;
