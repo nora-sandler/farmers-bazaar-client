@@ -43,6 +43,23 @@ class Login extends React.Component {
         }
     }
 
+    displayError(message){
+        if(message) {
+            return (
+              <div className="error">
+              <p className="input-error">{props.message}</p>
+              </div>
+            );
+          }
+          return 
+          <div>
+        
+          </div>
+          
+          
+        }
+    }
+
     validatePassword() {
         const password = this.state.password.value.trim();
         if (password.length === 0) {
@@ -108,6 +125,9 @@ class Login extends React.Component {
                                 message={this.validateUserName()}
                             />
                         )}
+                        <ValidationError
+                                message={this.validateUserName()}
+                            />
                         <label htmlFor="password">Password</label>
                         <input
                             type="Password"
@@ -124,6 +144,11 @@ class Login extends React.Component {
                                 message={this.validatePassword()}
                             />
                         )}
+                        <ValidationError
+                                message={this.validatePassword()}
+                            />
+
+                            
                         <button
                             className="go-button"
                             type="submit"
