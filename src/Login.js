@@ -95,14 +95,18 @@ class Login extends React.Component {
                 window.location = "/add-item/";
             })
             .catch((err) => {
-                // this.setState({
-            // error:err.message
-            //     })
-                console.log(err);
+                this.setState({
+            error: "Username or password is invalid"
+                })
+                // console.log(err);
             });
     };
 
     render() {
+        const msg = this.state.error ? <p>
+            {this.state.error}
+        </p>:
+        <div></div>;
         return (
             <div className="Login">
                 <section id="loginPage">
@@ -113,7 +117,7 @@ class Login extends React.Component {
 
                     <form className="loginForm" onSubmit={this.loginUser}>
                     <div className = "errorMessage">
-                    ""
+                        {msg}
                     </div>
                         <label htmlFor="userName">Username</label>
                         <input
