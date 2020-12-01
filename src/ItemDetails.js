@@ -2,7 +2,7 @@ import React from "react"
 import config from "./config"
 import TokenService from "./services/token-service"
 import ValidationError from "./validationError"
-import { Link } from 'react-router-dom'
+
 
 class ItemDetails extends React.Component {
     constructor(props) {
