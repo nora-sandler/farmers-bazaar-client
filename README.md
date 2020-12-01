@@ -1,5 +1,4 @@
 # Farmers Bazaar  
-For people who are following diets restrictions and need new ideas on recipes.
 Farmer's bazaar is created for farmers who want to sell fresh products to local shoppers. 
 
 ## Working Prototype 
