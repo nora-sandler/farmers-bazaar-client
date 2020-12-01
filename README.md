@@ -3,7 +3,7 @@ For people who are following diets restrictions and need new ideas on recipes.
 Farmer's bazaar is created for farmers who want to sell fresh products to local shoppers. 
 
 ## Working Prototype 
-(Example) You can access a working prototype of the React app here: https://diet-meal-planner.vercel.app/ and Node app here: https://farmers-bazaar-api.herokuapp.com/api
+(Example) You can access a working prototype of the React app here: https://new-farmers-bazaar-client-kd8rla6pb.vercel.app/ and Node app here: https://farmers-bazaar-api.herokuapp.com/api
 
 
 ## User Stories 
