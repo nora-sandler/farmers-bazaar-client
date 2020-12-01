@@ -12,7 +12,6 @@ class Landing extends React.Component {
           <Header />
           <section id="landingPage">
             <div id="description">
-              {/* <h2>Diet meal planner</h2> */}
               <h5>Welcome to the farmer's bazaar, create your inventory, 
               update it and sell farm fresh products to everyone who is interested in fresh local produce. </h5>
               

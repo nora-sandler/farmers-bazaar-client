@@ -35,12 +35,10 @@ class Login extends React.Component {
     validateUserName() {
         const userName = this.state.userName.value.trim();
         if (userName.length === 0) {
-            return <p className="input-error">Username is required</p>;
+            return "Username is required"
         } else if (userName.length < 2) {
             return (
-                <p className="input-error">
-                    Username must be at least 2 characters long
-                </p>
+                    "Username must be at least 2 characters long"
             );
         }
     }
@@ -51,15 +49,13 @@ class Login extends React.Component {
             return <p className="input-error">Password is required</p>;
         } else if (password.length < 6 || password.length > 72) {
             return (
-                <p className="input-error">
-                    Password must be between 6 and 72 characters long
-                </p>
+                    "Password must be between 6 and 72 characters long."
             );
         } else if (!password.match(/[0-9]/)) {
             return (
-                <p className="input-error">
-                    Password must contain at least one number
-                </p>
+
+                    "Password must contain at least one number."
+
             );
         }
     }
@@ -82,7 +78,7 @@ class Login extends React.Component {
                 window.location = "/add-item/";
             })
             .catch((err) => {
-                console.log(err);
+                // console.log(err);
             });
     };
 
