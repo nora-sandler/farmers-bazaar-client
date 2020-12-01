@@ -55,12 +55,12 @@ Register Page
 ![Register Page](/github-images/screenshots/registration_page.png)
 Login Page
 ![Login Page](/github-images/screenshots/Login_page.png)
-RAdd Items Page
+Add Items Page
 ![Add Items Page](/github-images/screenshots/AddItem_page.png)
-Item Details Page
-![Item Details Page](/github-images/screenshots/Inventory_page.png)
 Items Inventory Page
-![Items Inventory Page](/github-images/screenshots/Added_recipes.png)
+![Item Details Page](/github-images/screenshots/Inventory_page.png)
+Item Details Page
+![Item Details Page](/github-images/screenshots/Item_details.png)
 
 
 
