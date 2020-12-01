@@ -113,8 +113,8 @@ class ItemDetails extends React.Component {
 
     componentDidMount() {
 
-        let currentUser = TokenService.getUserId();
-        console.log(currentUser)
+        // let currentUser = TokenService.getUserId();
+        // console.log(currentUser)
 
         //if the user is not logged in, send him to landing page
         if (!TokenService.hasAuthToken()) {
