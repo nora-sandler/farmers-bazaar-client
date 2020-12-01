@@ -130,11 +130,11 @@ class ItemDetails extends React.Component {
         fetch(getItemDetailsUrl)
             .then((itemDetails) => itemDetails.json())
             .then((itemDetails) => {
-                console.log(itemDetails)
+                // console.log(itemDetails)
                 this.setState({
                     itemDetails: itemDetails,
                 });
-                console.log(this.state);
+                // console.log(this.state);
             })
 
             .catch((error) => this.setState({ error }));

@@ -43,10 +43,6 @@ This app is for two types of users: a visitor and a logged-in user
 
 
 
-
-
-
-
 ## Screenshots 
 Landing Page
 :-------------------------:
