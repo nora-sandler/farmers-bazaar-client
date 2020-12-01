@@ -85,7 +85,7 @@ button:hover {
 a {
   font-size: 20px;
   text-decoration: none;
-  color: rgb(34, 30, 255);
+  color: rgb(71, 30, 255);
   padding: 15px;
 }
 
@@ -323,12 +323,11 @@ Content styles (Main Module)
   max-width: 500px;
 }
 
-
 .AddItems input {
   border: solid 1px;
 }
 
-.itemDetails{
+.itemDetails {
   font-size: 20px;
   text-decoration: none;
   color: black;
@@ -341,17 +340,18 @@ Content styles (Main Module)
   max-width: 500px;
 }
 
-.itemDetails input{
+.itemDetails input {
   border: solid 1px;
 }
-
 
 .itemDetails li {
   list-style-type: none;
 }
 
-
-
+.inventoryTable{
+  table-layout: auto;
+  width:90%;
+}
 
 
 

@@ -174,9 +174,12 @@ class ItemDetails extends React.Component {
 
 
 
-        console.log(payload)
+    //     console.log(this.props)
 
-       const itemId = this.props.match.params.itemId;
+    //    const itemId = this.props.match.params.itemId;
+const itemId = window.location.href.split("/")[4]
+// console.log(itemId,'-----------------')
+// const itemId2 = this.props.match.params.itemId;
 
         fetch(`${config.API_ENDPOINT}/items/${itemId}`, {
             method: 'PATCH',

@@ -67,16 +67,12 @@ class Inventory extends React.Component {
                 let itemDetailsUrl = `/item-details/${item.id}`
                 if (item) {
                     return (
-                        <li key={key}>
-                            <Link to={itemDetailsUrl}>
-                                <p>{item.name} </p>
-                                <p>{item.description} </p>
-                                <p>{item.itemprice} </p>
-                                <p>{item.itemcount} </p>
-                            </Link>
-
-                        </li>
-
+                        <tr key = {key}>  
+                            <td><Link to={itemDetailsUrl}>{item.name} </Link></td>
+                            <td>{item.description} </td>
+                            <td>{item.itemprice} </td>
+                            <td>{item.itemcount} </td>
+                        </tr>
                     )
                 }
             })
@@ -86,7 +82,31 @@ class Inventory extends React.Component {
         return (
             <div className="Inventory">
                 <section id="InventoryPage">
+                <table className ="inventoryTable">
+                <colgroup>
+                    <col span = "4"/>
+                    <col span = "4"/>
+                    <col span = "4"/>
+                    <col span = "4"/>
+                </colgroup>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Description
+                    </th>
+
+                    <th>
+                        Price
+                    </th>
+                    <th>
+                        Count
+                    </th>
+                </tr>
                     {showItemsPage}
+                    </table>
+
                 </section>
             </div>
         );
