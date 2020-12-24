@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter , Switch, Route} from 'react-router-dom'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import './App.css'
 import Landing from './Landing'
 import AddItems from './AddItems'
@@ -9,13 +9,14 @@ import Register from './Register'
 import NavBar from './NavBar'
 import Error from './Error'
 import ItemDetails from './ItemDetails'
+import Contact from './Contact'
 
 class App extends React.Component {
   render() {
     return (
       <div className="App">
         <BrowserRouter>
-        <NavBar />
+          <NavBar />
           <Switch>
             <Route exact path='/' component={Landing} />
 
@@ -29,12 +30,14 @@ class App extends React.Component {
 
             <Route path='/item-details/:itemId' component={ItemDetails} />
 
-            <Route component={Error}/>
+            <Route path='/contact/:userId' component={Contact} />
+
+            <Route component={Error} />
 
 
           </Switch>
         </BrowserRouter>
-        
+
       </div>
     );
   }

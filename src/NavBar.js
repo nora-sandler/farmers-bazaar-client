@@ -19,7 +19,11 @@ class NavBar extends Component {
 
         return (
             <header className='clearfix'>
-                <h2>Farmers-bazaar</h2>
+                <h2>
+                    <Link to="/">
+                        Farmers-bazaar
+                </Link>
+                </h2>
                 {TokenService.hasAuthToken() ?
                     <nav className="nav">
                         <ul className='link'>
@@ -49,7 +53,18 @@ class NavBar extends Component {
                             </li>
                         </ul>
                     </nav>
-                    : ''}
+                    :
+                    <nav className="nav">
+                        <ul>
+                            <li>
+                                <Link to='/signup' >Farmer's Sign Up</Link>
+                            </li>
+                            <li>
+                                <Link to='/user/login' >Farmer's Login</Link>
+                            </li>
+                        </ul>
+                    </nav>
+                }
             </header>
         )
     }

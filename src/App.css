@@ -193,16 +193,18 @@ Content styles (Main Module)
 }
 
 .Landing {
-  max-width: 500px;
+  max-width: 1600px;
   width: 90%;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 10px;
   margin-right: auto;
   margin-left: auto;
   padding: 72px;
   text-align: left;
 }
-
+#description {
+  margin-bottom: 50px;
+}
 
 
 .go-button {
