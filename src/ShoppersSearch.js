@@ -1,6 +1,7 @@
 import React from "react"
 import config from "./config"
 import TokenService from "./services/token-service"
+import ValidationError from "./validationError"
 import { Link } from 'react-router-dom'
 
 class ShoppersSearch extends React.Component {
@@ -8,6 +9,11 @@ class ShoppersSearch extends React.Component {
         super(props);
         this.state = {
             itemsByUserId: [],
+            searchTerm: {
+                value: "",
+                touched: false,
+            },
+            error: null
 
         };
     }
@@ -27,23 +33,63 @@ class ShoppersSearch extends React.Component {
             .catch((error) => this.setState({ error }));
     }
 
+    changeSearchTerm(searchTerm) {
+        this.setState({
+            searchTerm: { value: searchTerm },
+        });
+    }
 
+    validateSearchTerm() {
+        const searchTerm = this.state.searchTerm.value.trim();
+        if (searchTerm.length === 0) {
+            return "SearchTerm is required"
+        } else if (searchTerm.length < 2) {
+            return (
+                "SearchTerm must be at least 2 characters long"
+            );
+        }
+    }
 
+    searchForm = (event) => {
+
+        event.preventDefault();
+        const { searchTerm } = event.target;
+        console.log("searchTerm:", searchTerm.value);
+        let getItemsBySearchTermUrl = `${config.API_ENDPOINT}/items/keyword/${searchTerm.value}`;
+        fetch(getItemsBySearchTermUrl)
+            .then((itemsBySearchTerm) => itemsBySearchTerm.json())
+            .then((itemsBySearchTerm) => {
+                console.log(itemsBySearchTerm)
+                this.setState({
+                    itemsByUserId: itemsBySearchTerm,
+                });
+                console.log(this.state);
+            })
+            .catch((error) => this.setState({ error }));
+
+    };
+    ShowAll = () => {
+        
+        window.location = '/'
+    }
     render() {
 
-
+        const msg = this.state.error ? <p>
+            {this.state.error}
+        </p> :
+            <div></div>;
 
         // console.log(this.state.itemsByUserId.length)
         let showItemsPage = ''
         //by default show there are no items
         if (this.state.itemsByUserId.length === 0) {
             showItemsPage =
-            <tbody>
-                <tr className="itemsByUser">
-                    <td>No items here</td>
-             </tr>
-            </tbody>
-                
+                <tbody>
+                    <tr className="itemsByUser">
+                        <td>No items here</td>
+                    </tr>
+                </tbody>
+
         }
         // if there are items 
         else {
@@ -54,14 +100,14 @@ class ShoppersSearch extends React.Component {
                 let itemDetailsUrl = `/contact/${item.users_id}`
                 if (item) {
                     return (
-                        <tbody key = {key}>
-                        <tr>  
-                            <td>{item.name} </td>
-                            <td>{item.description} </td>
-                            <td>{item.itemprice} </td>
-                            <td>{item.itemcount} </td>
-                            <td><Link to={itemDetailsUrl}>contact </Link></td>
-                        </tr>
+                        <tbody key={key}>
+                            <tr>
+                                <td>{item.name} </td>
+                                <td>{item.description} </td>
+                                <td>{item.itemprice} </td>
+                                <td>{item.itemcount} </td>
+                                <td><Link to={itemDetailsUrl}>contact </Link></td>
+                            </tr>
                         </tbody>
                     )
                 }
@@ -72,32 +118,71 @@ class ShoppersSearch extends React.Component {
         return (
             <div className="Inventory">
                 <section id="InventoryPage">
-                <table className ="inventoryTable">
-                <colgroup>
-                    <col span = "4"/>
-                    <col span = "4"/>
-                    <col span = "4"/>
-                    <col span = "4"/>
-                </colgroup>
-                
-                <tbody>
-                <tr>
-                    <th>
-                        Name
+                    <form className="searchForm" onSubmit={this.searchForm}>
+                        <div className="errorMessage">
+                            {msg}
+                        </div>
+                        <label htmlFor="searchTerm">SearchTerm</label>
+                        <input
+                            type="text"
+                            id="searchTerm"
+                            name="searchTerm"
+                            placeholder="Produce name"
+                            onChange={(e) =>
+                                this.changeSearchTerm(e.target.value)
+                            }
+                            required
+                        />
+                        {this.state.searchTerm.touched && (
+                            <ValidationError
+                                message={this.validateSearchTerm()}
+                            />
+                        )}
+                        <ValidationError
+                            message={this.validateSearchTerm()}
+                        />
+
+
+                        <button
+                            className="go-button"
+                            type="submit"
+                        >
+                            Search
+                        </button>
+                        <Link to="/" onClick={this.ShowAll}>
+                                    <span className='navlink-text'>Show all</span>
+                                </Link>
+                    </form>
+
+
+
+
+                    <table className="inventoryTable">
+                        <colgroup>
+                            <col span="4" />
+                            <col span="4" />
+                            <col span="4" />
+                            <col span="4" />
+                        </colgroup>
+
+                        <tbody>
+                            <tr>
+                                <th>
+                                    Name
                     </th>
-                    <th>
-                        Description
+                                <th>
+                                    Description
                     </th>
 
-                    <th>
-                        Price
+                                <th>
+                                    Price
                     </th>
-                    <th>
-                        Count
+                                <th>
+                                    Count
                     </th>
-                </tr>
-                </tbody>
-                    {showItemsPage}
+                            </tr>
+                        </tbody>
+                        {showItemsPage}
                     </table>
 
                 </section>
