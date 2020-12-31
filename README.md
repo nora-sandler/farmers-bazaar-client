@@ -2,7 +2,7 @@
 Farmer's bazaar is created for farmers who want to sell fresh products to local shoppers. 
 
 ## Working Prototype 
- You can access a working prototype of the React app here: https://new-farmers-bazaar-client-kd8rla6pb.vercel.app/ and Node app here: https://farmers-bazaar-api.herokuapp.com/api
+ You can access a working prototype of the React app here: https://farmers-bazaar-client.vercel.app/ and Node app here: https://farmers-bazaar-api.herokuapp.com/api
 
 
 ## User Stories 
