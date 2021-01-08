@@ -69,7 +69,7 @@ class ShoppersSearch extends React.Component {
 
     };
     ShowAll = () => {
-        
+
         window.location = '/'
     }
     render() {
@@ -142,16 +142,18 @@ class ShoppersSearch extends React.Component {
                             message={this.validateSearchTerm()}
                         />
 
-
-                        <button
-                            className="go-button"
-                            type="submit"
-                        >
-                            Search
+                        <div className="button-wrapper">
+                            <button
+                                className="go-button"
+                                type="submit"
+                            >
+                                Search
                         </button>
-                        <Link to="/" onClick={this.ShowAll}>
-                                    <span className='navlink-text'>Show all</span>
-                                </Link>
+
+                            <Link className="show-button" to="/" onClick={this.ShowAll}>
+                                <span className='navlink-text'>Show all</span>
+                            </Link>
+                        </div>
                     </form>
 
 

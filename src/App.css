@@ -124,7 +124,8 @@ h5 {
   font-family: 'aglet-slab', sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 1.0625rem;
+  font-size: 1.09rem;
+  text-align: center;
   line-height: 2rem;
   color: #373E40;
   padding-top: 15px;
@@ -220,6 +221,34 @@ Content styles (Main Module)
   border: 1px solid #361f1f;
   border-radius: 190px;
   width: 30%;
+}
+
+.show-button{
+  margin: 15px 0px;
+  margin-left: 30%;
+  margin-right: 30%;
+  background-color: pink;
+  color: black;
+  padding: 10px 5px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 15px;
+  border: 1px solid #361f1f;
+  border-radius: 19px;
+}
+.button-wrapper {
+  text-align: center;
+
+}
+.button-wrapper button, .button-wrapper a {
+display: inline-block;
+width:30%;
+margin-right: 0;
+margin-left: 0;
+}
+
+.button-wrapper a {
+  margin-left:10%;
 }
 
 .signup-button {

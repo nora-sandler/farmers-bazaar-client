@@ -113,8 +113,6 @@ class ItemDetails extends React.Component {
 
     componentDidMount() {
 
-        // let currentUser = TokenService.getUserId();
-        // console.log(currentUser)
 
         //if the user is not logged in, send him to landing page
         if (!TokenService.hasAuthToken()) {
@@ -176,10 +174,9 @@ class ItemDetails extends React.Component {
 
     //     console.log(this.props)
 
-    //    const itemId = this.props.match.params.itemId;
+    
 const itemId = window.location.href.split("/")[4]
-// console.log(itemId,'-----------------')
-// const itemId2 = this.props.match.params.itemId;
+
 
         fetch(`${config.API_ENDPOINT}/items/${itemId}`, {
             method: 'PATCH',
@@ -303,10 +300,6 @@ const itemId = window.location.href.split("/")[4]
                         </button>
                     </form>
 
-                    {/* <p>{this.state.itemDetails.name} </p>
-                    <p>{this.state.itemDetails.description} </p>
-                    <p>{this.state.itemDetails.price} </p>
-                    <p>{this.state.itemDetails.count} </p> */}
                 </li>
         }
 

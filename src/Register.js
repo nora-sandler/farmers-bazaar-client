@@ -97,17 +97,15 @@ class Register extends React.Component {
     validateRepeatPassword() {
         const repeatPassword = this.state.repeatPassword.value.trim();
         const password = this.state.password.value.trim();
-        // this.setState({submitButtonDisabled: 'disabled'});
+
         if (repeatPassword !== password) {
             return <p className="input-error">Passwords do not match</p>;
         }
-        // else {
-        //     this.setState({submitButtonDisabled: ''});
-        // }
+
     }
 
 
-//////
+//////Farm name
 changeFarmName(farm_name) {
     this.setState({
         farm_name: { value: farm_name, touched: true },
@@ -147,7 +145,7 @@ validateStreetAddress() {
         );
     }
 }
-////
+////City
 changeCity(city) {
     this.setState({
         city: { value: city, touched: true },
@@ -168,7 +166,7 @@ validateCity() {
 }
 
 
-/////
+/////State
 changeState(state) {
     this.setState({
         state: { value: state, touched: true },
@@ -188,7 +186,7 @@ validateState() {
     }
 }
 
-/////
+/////ZIP
 changeZIP(zip) {
     this.setState({
         zip: { value: zip, touched: true },
@@ -226,7 +224,7 @@ validateZIP() {
             state,
             zip} = data;
         //console.log(user_name, password, repeatPassword);
-        //validate user data
+
 
       this.setState({ error: null })
       AuthApiService.postUser({
@@ -241,9 +239,6 @@ validateZIP() {
   
       .then(response => {
           //console.log('user:', response)
-          // user_name.value = ''
-          // password.value = ''
-          // repeatPassword.value = ''
           TokenService.saveAuthToken(response.authToken)
           TokenService.saveUserId(response.id)
           window.location = "/add-item"
